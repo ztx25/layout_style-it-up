@@ -27,6 +27,8 @@ const basicScenario = {
 
 const config = {
   id: 'test',
+  onBeforeScript: 'puppet/onBefore.js',
+  onReadyScript: 'puppet/onReady.js',
   viewports: [
     {
       name: 'tablet_h',
@@ -35,7 +37,22 @@ const config = {
     }
   ],
   scenarios: [
-    { ...basicScenario }
+    {
+      ...basicScenario,
+      label: 'entire-document',
+      selectors: ['document']
+    },
+    {
+      ...basicScenario,
+      label: 'default-block',
+      selectors: ['#qa-block']
+    },
+    {
+      ...basicScenario,
+      label: 'hovered-block',
+      hoverSelectors: ['#qa-block'],
+      selectors: ['#qa-block']
+    }
     // define here scenarios for testing
   ],
   paths: {
