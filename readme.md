@@ -12,7 +12,11 @@ The width of the blocks must be 300 pixels. The height of each of the blocks
 (including both header and footer) has to be 100 pixels. When hovered (the 
 cursor is on the block), height must increase to 200 pixels.
 The color of the header must be blue, the color of the footer must be black, and 
-the colors of the blocks in between must be red, then green, then orange, then 
+the colors of the blocks in between must be the following
+1. red
+1. green
+2. orange
+... 
 again red, then green, then orange, and once again red, then green, then orange.
 
 There should be no vertical spacing between the blocks and the edges of the 
