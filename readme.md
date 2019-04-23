@@ -16,12 +16,12 @@ the colors of the blocks in between must be the following
 1. red
 1. green
 2. orange
+
 ... 
 again red, then green, then orange, and once again red, then green, then orange.
 
 There should be no vertical spacing between the blocks and the edges of the 
-page. Place the blocks so that they are horizontally centered on the page (you 
-can use `margin: auto` for that).
+page. Place the blocks so that they are horizontally centered on the page.
 
 You can find some sample screenshots in the [backstop_data/bitmaps_reference](backstop_data/bitmaps_reference) folder.
 
