@@ -15,7 +15,7 @@ The color of the header must be blue, the color of the footer must be black, and
 the colors of the blocks in between must be the following
 1. red
 1. green
-2. orange
+1. orange
 
 ... 
 again red, then green, then orange, and once again red, then green, then orange.
