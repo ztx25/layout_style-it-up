@@ -1,15 +1,10 @@
 'use strict';
 
-const urls = {
-  development: 'http://host.docker.internal:8080',
-  travis: 'http://127.0.0.1:8080'
-};
-
 // https://github.com/garris/BackstopJS#advanced-scenarios
 const basicScenario = {
   label: 'test', // name of the test
-  url: urls.development,
-  referenceUrl: '', // put here reference to github-pages with ready project
+  url: 'http://localhost:8080',
+  referenceUrl: 'https://mate-academy.github.io/layout_solutions/style-it-up/',
   readyEvent: '',
   readySelector: '',
   delay: 1000,
@@ -25,8 +20,10 @@ const basicScenario = {
   requireSameDimensions: true
 };
 
-const config = {
+module.exports = {
   id: 'test',
+  onBeforeScript: 'puppet/onBefore.js',
+  onReadyScript: 'puppet/onReady.js',
   viewports: [
     {
       name: 'tablet_h',
@@ -35,7 +32,22 @@ const config = {
     }
   ],
   scenarios: [
-    { ...basicScenario }
+    {
+      ...basicScenario,
+      label: 'entire-document',
+      selectors: ['document']
+    },
+    {
+      ...basicScenario,
+      label: 'default-block',
+      selectors: ['#qa-block']
+    },
+    {
+      ...basicScenario,
+      label: 'hovered-block',
+      hoverSelectors: ['#qa-block'],
+      selectors: ['#qa-block']
+    }
     // define here scenarios for testing
   ],
   paths: {
@@ -53,12 +65,5 @@ const config = {
   asyncCaptureLimit: 5,
   asyncCompareLimit: 50,
   debug: false,
-  debugWindow: false,
-  // eslint-disable-next-line max-len
-  dockerCommandTemplate: 'docker run --rm -it --network host --mount type=bind,source="{cwd}",target=/src backstopjs/backstopjs:{version} {backstopCommand} {args}'
-};
-
-module.exports = {
-  urls,
-  config
+  debugWindow: false
 };
