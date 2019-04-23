@@ -17,9 +17,6 @@ the colors of the blocks in between must be the following
 1. green
 1. orange
 
-... 
-again red, then green, then orange, and once again red, then green, then orange.
-
 There should be no vertical spacing between the blocks and the edges of the 
 page. Place the blocks so that they are horizontally centered on the page.
 
